@@ -1,3 +1,2 @@
-x = input().split()
-# y = [int(i) for i in x]
-# print (type(y))
+for i in range(len(finalRes)):
+#     print(finalRes[i],end='\n')
