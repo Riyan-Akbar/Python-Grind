@@ -46,7 +46,7 @@ for i in range(len(ans)):
 
 # What observation unlocked it? : figured it out with the help of ai, was doing it in some different way
 
-# What technique was used? one loop in which the inputs where taken and the no of 1's were counted
+# What technique was used? one loop in which the inputs where taken and  the no of 1's were counted
 
 # Could I recognize this technique in another problem? : no this was the first time i faced this type of problem.   
 
