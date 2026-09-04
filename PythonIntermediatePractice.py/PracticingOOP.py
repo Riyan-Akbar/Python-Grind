@@ -87,17 +87,81 @@ class ShoppingCart:
     def show_items(self):
         return self.lst
 
-cart = ShoppingCart()
+class Dog:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
 
-cart.add_item("Apple")
-cart.add_item("Banana")
-cart.add_item("Milk")
+    def birthday(self):
+        self.age += 1
+        return self.age 
+    def show_info(self):
+        return (f"Name: {self.name}, Age: {self.age}")
 
-print(cart.show_items())
+class Student:
 
-cart.remove_item("Banana")
+    def __init__(self,name,marks):
+        self.name = name 
+        self.marks = marks
+        # marks = [] not required as the data type is already understood by py when we pass them in the functions
 
-print(cart.show_items())
+    def average(self):
+        return sum(self.marks)/ len(self.marks)
+    def highest_mark(self):
+        return max(self.marks)
+
+class Book:
+    def __init__(self,title,author,avaible = True):
+        self.title = title
+        self.author = author
+        self.avaible = avaible
+
+
+    def borrow(self):
+        if self.avaible == True:
+            self.avaible = False
+            return ("Book borrowed")
+        else:
+            return ("Book is not avaible")
+
+    def return_book(self):
+        if self.avaible == False:
+            self.avaible = True
+            return ("Book returned")
+        else:
+            return ("Book was not borrowed")
+
+class BankAccount:
+    # def __init__(self,owner,balance = 0,transactions = []): this is because if i put [] in there it will become a global variable shared between any two objects , so dont do that . when asked to create a list do it inside the init constructor for variables for each obj separately.
+    def __init__(self,owner,balance = 0):
+        self.owner = owner
+        self.balance = balance
+        self.transactions = [] 
+
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        self.transactions.append(amount)
+
+    def withdraw(self,amount):
+        # if self.balance - amount <= 0: this is wrong , as if a person had 10 and we run it throug this if st we will get false.
+        if amount > self.balance:
+            return False
+        else:
+            self.balance = self.balance - amount
+            self.transactions.append(-amount)
+            return True
+
+    def get_balance(self):
+        return self.balance
+
+    def get_transactions(self):
+        return self.transactions
+
+
+
+
+
+    
 
 
 
@@ -111,7 +175,51 @@ print(cart.show_items())
 
 
 
+# account = BankAccount("Riyan", 1000)
 
+# account.deposit(500)
+# account.withdraw(200)
+# account.withdraw(2000)
+
+# print(account.get_balance())
+# print(account.get_transactions())
+
+# book = Book("Harry Potter", "J.K. Rowling")
+
+# print(book.borrow())
+# print(book.borrow())
+
+# print(book.return_book())
+# print(book.return_book())
+
+
+# student = Student("Riyan", [80, 90, 75, 95])
+
+# print(student.average())
+# print(student.highest_mark())
+
+# dog1 = Dog("Bruno", 3)
+# dog2 = Dog("Max", 5)
+
+# dog1.birthday()
+# dog1.birthday()
+
+# dog2.birthday()
+
+# print(dog1.show_info())
+# print(dog2.show_info())
+
+# cart = ShoppingCart()
+
+# cart.add_item("Apple")
+# cart.add_item("Banana")
+# cart.add_item("Milk")
+
+# print(cart.show_items())
+
+# cart.remove_item("Banana")
+
+# print(cart.show_items())
 
 # car = Car("Toyota", "Corolla")
 
