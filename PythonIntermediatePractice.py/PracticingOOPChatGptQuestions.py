@@ -157,11 +157,58 @@ class BankAccount:
     def get_transactions(self):
         return self.transactions
 
+class Vehicle:
+    def __init__(self,max_speed,mileage):
+        self.max_speed = max_speed
+        self.mileage = mileage
+    def display(self):
+        return print(f"Vehicle Name: Tesla Model S, Speed: {self.max_speed}, Mileage: {self.mileage}")
+
+class Product:
+    def __init__(self,name,price,quantity):
+        self.name = name
+        self.price = price
+        self.quatity = quantity
+    def total_value(self):
+        ans = self.price*self.quatity
+        return(f"Total stock value of {self.name}: ${ans}")
+
+class User:
+    def __init__(self,name,password):
+        self.name = name
+        self.password = password
+    def check(self):
+        if self.name == "alice" and self.password == "secure123":
+            return True
+        else:
+            return False
+
+class Shape:
+    def area(self):
+        return 0
+
+class Circle(Shape):
+    def __init__(self, rad):
+        self.rad = rad
+    def area(self):
+        return round(3.14159*self.rad**2,2)
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+    def area(self):
+        return self.side*self.side
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+    def area(self):
+        return 0.5*self.base*self.height
 
 
 
 
-    
 
 
 
@@ -174,6 +221,33 @@ class BankAccount:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# shapes = [Circle(7), Square(4), Triangle(6,8)]
+# for shape in shapes:
+#     print(f"{type(shape).__name__} area: {shape.area()}")
+
+# u = User("alice","secure123")
+# print(u.check()) 
+
+# p1 = Product("Laptop",899.99,5)
+# print(p1.total_value())
+
+# print (Vehicle)
+# v = Vehicle(250,18)
+# v.display()
 
 # account = BankAccount("Riyan", 1000)
 
